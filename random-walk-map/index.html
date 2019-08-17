@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Random Walk map generator</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="playground">
+        <canvas class="random-map"></canvas>
+        <div class="wrapper">
+            <div class="range">
+                <label class="range__label">
+                    STEPS:
+                    <strong class="range__label__steps">...</strong>
+                </label>
+                <input type="range" min="1" max="100000" value="50000" class="range__slider">
+            </div>
+            <button class="redraw-button" onclick="randomWalk()">Redraw</button>
+        </div>
+    </div>
+    <p class="info">
+        *Keep in mind that rendering may not be instant and can take up to 30s, especially on older devices.
+    </p>
+    <ul class="links">
+        <li class="link">
+            <a class="link__clickable" href="https://github.com/bgord/random-walk-map" target="blank">
+                <i class="fab fa-github "></i>Code on Github
+            </a>
+        </li>
+        <li class="link">
+            <a class="link__clickable">
+                <i class="fab fa-medium "></i>Medium post
+            </a>
+        </li>
+        <li class="link ">
+            <a class="link__clickable" href="https://twitter.com/xbgord" target="blank">
+                <i class="fab fa-twitter "></i>Twitter
+            </a>
+        </li>
+    </ul>
+
+</body>
+
+<script src="index.js "></script>
+
+</html>
