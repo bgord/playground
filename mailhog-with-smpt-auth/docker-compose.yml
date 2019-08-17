@@ -1,0 +1,42 @@
+version: '3'
+services:
+  mailhog:
+    build:
+      context: ./mailhog
+      dockerfile: Dockerfile-mailhog
+    ports:
+      - 1025:1025
+      - 8025:8025
+    volumes:
+      - ./mailhog:/home/mailhog
+    networks:
+      app_net:
+        ipv4_address: 172.16.238.10
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile-nginx
+    ports:
+      - 2025:2025
+    networks:
+      app_net:
+        ipv4_address: 172.16.238.11
+  node-auth-proxy:
+    build:
+      context: ./node-auth-proxy
+      dockerfile: Dockerfile-node-auth-proxy
+    ports:
+      - 3000:3000
+    volumes:
+      - ./node-auth-proxy:/usr/src/app
+    networks:
+      app_net:
+        ipv4_address: 172.16.238.12
+    env_file:
+      - ./node-auth-proxy/.env
+networks:
+  app_net:
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.16.238.0/24"
