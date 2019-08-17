@@ -1,0 +1,17 @@
+{
+  "name": "markov-chains-text-generator",
+  "version": "1.0.0",
+  "description":
+    "Generate text from given *. txt files based on Markov Chains model in nodejs.",
+  "main": "index.js",
+  "repository": "git@github.com:bgord/markov-chains-text-generator.git",
+  "author": "yktrak <bargord11@icloud.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "devDependencies": {
+    "jest": "^21.1.0"
+  }
+}
